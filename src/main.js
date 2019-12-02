@@ -1,8 +1,15 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import initialConfig from "@/config";
+import store from "@/store";
 
-Vue.config.productionTip = false
+const { router } = initialConfig(store);
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+Vue.config.devtools = process.env.NODE_ENV !== "production";
+Vue.config.productionTip = false;
+
+export default new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount("#app");
