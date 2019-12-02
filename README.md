@@ -8,6 +8,10 @@ npm install
 
 ### Env setup
 
+```
+cp .env.example .env
+```
+
 ### Compiles and hot-reloads for development
 
 ```

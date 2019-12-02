@@ -10,6 +10,8 @@ export default {
 };
 </script>
 
+<style src="bulma/css/bulma.css"></style>
+<style src="element-ui/lib/theme-chalk/index.css"></style>
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
