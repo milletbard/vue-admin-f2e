@@ -16,7 +16,7 @@ export default store => {
     const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
     if (token && (to.path === "/login" || to.path === "/")) {
-      next("/");
+      next("/post");
     } else if (!token && requiresAuth) {
       next({
         path: "/login",
