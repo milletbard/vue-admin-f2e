@@ -1,5 +1,7 @@
-import Login from "@/views/Login";
 import Layout from "../layout/index.vue";
+
+import Login from "@/views/Login";
+import Post from "@/views/Post";
 
 export default [
   {
@@ -7,8 +9,14 @@ export default [
     component: Login
   },
   {
-    path: "/home",
+    path: "/",
     component: Layout,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true },
+    children: [
+      {
+        path: "/post",
+        component: Post
+      }
+    ]
   }
 ];
