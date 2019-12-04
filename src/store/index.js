@@ -14,12 +14,14 @@ const store = new Vuex.Store({
 
 if (module.hot) {
   // 使 action 和 mutation 成為可熱重載模塊
-  module.hot.accept(["./modules/auth.js"], () => {
+  module.hot.accept(["./modules/auth"], () => {
     // 加载新模块
     store.hotUpdate({
       modules: {
-        auth: require("./modules/auth")
+        auth: require("./modules/auth").default
       }
     });
   });
 }
+
+export default store;
