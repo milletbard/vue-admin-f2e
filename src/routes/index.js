@@ -1,7 +1,9 @@
 import Layout from "../layout/index.vue";
 
 import Login from "@/views/Login";
-import Post from "@/views/Post";
+
+import JsonDemoPost from "@/views/JsonDemo/Post";
+import JsonDemoComments from "@/views/JsonDemo/Comments";
 
 import ErrorNotFound from "@/views/Error/NotFound";
 
@@ -17,7 +19,11 @@ export default [
     children: [
       {
         path: "/json-demo/post",
-        component: Post
+        component: JsonDemoPost
+      },
+      {
+        path: "/json-demo/comments",
+        component: JsonDemoComments
       }
     ]
   },

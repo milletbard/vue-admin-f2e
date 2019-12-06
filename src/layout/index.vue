@@ -5,20 +5,10 @@
       <div class="column is-2">
         <side-bar></side-bar>
       </div>
-      <div class="column module-content">main</div>
+      <div class="column module-content">
+        <router-view></router-view>
+      </div>
     </div>
-    <!-- <div class="columns main-content">
-        <div class="column is-2">
-          <side-bar></side-bar>
-        </div>
-        <div class="column module-content">
-          <div class="section">
-            <transition name="el-fade-in-linear" mode="out-in">
-              <router-view></router-view>
-            </transition>
-          </div>
-        </div>
-    </div>-->
   </div>
 </template>
 

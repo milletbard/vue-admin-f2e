@@ -12,6 +12,7 @@
     "bulma": "^0.8.0",
     "core-js": "^3.4.3",
     "element-ui": "^2.13.0",
+    "eslint-loader": "^2.1.2",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.0",

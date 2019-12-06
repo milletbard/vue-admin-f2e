@@ -11,7 +11,7 @@ export default [
       },
       {
         name: "COMMENTS",
-        path: "/json-demo/commments",
+        path: "/json-demo/comments",
         icon: "bar-chart"
       }
     ]
