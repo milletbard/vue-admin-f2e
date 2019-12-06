@@ -1,12 +1,16 @@
 <template>
   <div class="layout">
     <navbar></navbar>
-    <section class="hero is-light is-fullheight-with-navbar">
-      <div class="columns main-content">
+    <div class="columns main-content">
+      <div class="column is-2">
+        <side-bar></side-bar>
+      </div>
+      <div class="column module-content">main</div>
+    </div>
+    <!-- <div class="columns main-content">
         <div class="column is-2">
           <side-bar></side-bar>
         </div>
-
         <div class="column module-content">
           <div class="section">
             <transition name="el-fade-in-linear" mode="out-in">
@@ -14,8 +18,7 @@
             </transition>
           </div>
         </div>
-      </div>
-    </section>
+    </div>-->
   </div>
 </template>
 
@@ -31,7 +34,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .module-content {
   overflow: scroll;
+}
+.main-content {
+  flex-grow: 1;
 }
 </style>

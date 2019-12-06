@@ -7,10 +7,10 @@
     </div>
     <el-dropdown-menu class="nav-menu">
       <el-dropdown-item
-        v-for="item in menu"
-        :key="item.path"
+        v-for="item in main"
+        :key="item.name"
         :command="item.path"
-        :class="renderSelected(item.path)"
+        :class="renderSelected(item.menuPath)"
       >
         <span class="icon">
           <i :class="['fa', `fa-${item.icon}`]" aria-hidden="true"></i>
@@ -22,19 +22,17 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 import { startsWith } from "lodash";
 export default {
   name: "nav-menu",
-  computed: {
-    ...mapState("menu", ["menu"])
-  },
+  computed: { ...mapGetters("menu", ["main"]) },
   methods: {
     pushRoute(path) {
       window.open(path, "_self");
     },
-    renderSelected(path) {
-      return { "is-active": startsWith(this.$route.path, `/${path}`) };
+    renderSelected(menuPath) {
+      return { "is-active": startsWith(this.$route.path, `/${menuPath}`) };
     }
   }
 };

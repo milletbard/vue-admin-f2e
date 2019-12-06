@@ -125,11 +125,14 @@ export default {
           const success = await this.login(this.form);
 
           if (success) {
-            const redirectPath = defaultTo(this.$route.query.redirect, "/");
+            const redirectPath = defaultTo(
+              this.$route.query.redirect,
+              "/json-demo/post"
+            );
 
             const message = "登入成功";
             this.$message({ type: "success", message });
-            // eslint-disable-next-line no-console
+
             this.$router.push(redirectPath);
           } else {
             const { authError } = this;

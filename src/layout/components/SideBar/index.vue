@@ -1,7 +1,7 @@
 <template>
-  <div class="side-bar">
-    side-bar
-  </div>
+  <el-menu class="side-menu">
+    <el-menu-item>POST</el-menu-item>
+  </el-menu>
 </template>
 
 <script>
@@ -10,4 +10,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.side-menu {
+  height: 100%;
+  border-radius: 0;
+  .el-menu-item {
+    text-align: center;
+  }
+}
+</style>

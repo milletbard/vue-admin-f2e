@@ -14,7 +14,7 @@ export default [
     meta: { requiresAuth: true },
     children: [
       {
-        path: "/post",
+        path: "/json-demo/post",
         component: Post
       }
     ]

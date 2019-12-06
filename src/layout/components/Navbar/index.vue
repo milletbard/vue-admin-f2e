@@ -1,9 +1,5 @@
 <template>
-  <nav
-    class="navbar is-info"
-    role="navigation"
-    aria-label="dropdown navigation"
-  >
+  <nav class="navbar is-info" role="navigation" aria-label="dropdown navigation">
     <div class="columns">
       <div class="column is-narrow">
         <nav-menu></nav-menu>
