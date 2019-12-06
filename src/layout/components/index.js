@@ -1,1 +1,2 @@
-export { default as Test } from "./Test.vue";
+export { default as Navbar } from "./Navbar";
+export { default as SideBar } from "./SideBar";

@@ -1,10 +1,11 @@
 import { getCaptchaInfo, login } from "@/api/auth";
-import { setToken } from "@/utils/auth";
+import { setToken, removeToken } from "@/utils/auth";
 const state = {
   authRequest: false,
   authError: null,
   captcha: null,
-  token: null
+  token: null,
+  user: null
 };
 const mutations = {
   SET_CAPTCHA: (state, result) => {
@@ -25,6 +26,10 @@ const mutations = {
   AUTH_FAILURE: (state, e) => {
     state.authError = e.errorCode;
     state.authRequest = false;
+  },
+  CLEAR_USER: state => {
+    state.token = null;
+    state.user = null;
   }
 };
 const actions = {
@@ -49,6 +54,10 @@ const actions = {
       commit("AUTH_FAILURE", e);
     }
     return false;
+  },
+  logout: async ({ commit }) => {
+    commit("CLEAR_USER");
+    removeToken();
   }
 };
 
