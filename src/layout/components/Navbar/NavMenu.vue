@@ -29,7 +29,7 @@ export default {
   computed: { ...mapGetters("menu", ["main"]) },
   methods: {
     pushRoute(path) {
-      window.open(path, "_self");
+      this.$router.push(path);
     },
     renderSelected(menuPath) {
       return { "is-active": startsWith(this.$route.path, `/${menuPath}`) };

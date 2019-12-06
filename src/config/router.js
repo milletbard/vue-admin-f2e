@@ -7,7 +7,7 @@ Vue.use(Router);
 export default store => {
   const router = new Router({
     routes,
-    mode: "history",
+    mode: "hash",
     scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 }
   });
 

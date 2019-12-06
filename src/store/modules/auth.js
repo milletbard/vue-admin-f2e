@@ -38,8 +38,6 @@ const actions = {
     commit("SET_CAPTCHA", result);
   },
   setToken: async ({ commit }, token) => {
-    // eslint-disable-next-line no-console
-    console.log(token);
     commit("SET_TOKEN", token);
   },
   login: async ({ commit }, form) => {
