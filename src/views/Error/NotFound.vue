@@ -4,7 +4,11 @@
       <div class="container has-text-centered">
         <h1 class="title">This page looks doesn't exist</h1>
         <h2 class="subtitle">
-          <button class="button is-primary is-inverted is-outlined" @click="backRoute">Back</button>
+          <router-link
+            class="button is-primary is-inverted is-outlined"
+            :to="defaultRoute"
+            >Back</router-link
+          >
         </h2>
       </div>
     </div>
@@ -12,12 +16,9 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "not-found",
-  methods: {
-    backRoute() {
-      this.$router.go(-1);
-    }
-  }
+  computed: mapGetters("menu", ["defaultRoute"])
 };
 </script>

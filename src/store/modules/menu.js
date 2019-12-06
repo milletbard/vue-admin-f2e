@@ -4,6 +4,7 @@ import { map, head, find } from "lodash";
 const state = { menu };
 
 const getters = {
+  defaultRoute: () => "/json-demo/post",
   main: ({ menu }) => {
     const gotModuleDefaultPath = sub => head(sub).path;
 
