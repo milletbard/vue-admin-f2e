@@ -3,6 +3,8 @@ import Layout from "../layout/index.vue";
 import Login from "@/views/Login";
 import Post from "@/views/Post";
 
+import ErrorNotFound from "@/views/Error/NotFound";
+
 export default [
   {
     path: "/login",
@@ -18,5 +20,9 @@ export default [
         component: Post
       }
     ]
+  },
+  {
+    path: "*",
+    component: ErrorNotFound
   }
 ];
