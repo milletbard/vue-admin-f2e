@@ -1,5 +1,9 @@
 <template>
-  <nav class="navbar is-info" role="navigation" aria-label="dropdown navigation">
+  <nav
+    class="navbar is-info"
+    role="navigation"
+    aria-label="dropdown navigation"
+  >
     <div class="columns">
       <div class="column is-narrow">
         <nav-menu></nav-menu>
@@ -48,7 +52,9 @@ export default {
 <style lang="scss" scoped>
 .columns {
   width: 100%;
+
   flex-shrink: 0; // 在空間不足的狀況下等比例縮小
+
   .column {
     display: flex;
     align-items: center;
