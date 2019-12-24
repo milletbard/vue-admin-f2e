@@ -15,17 +15,5 @@ export default [
         icon: "bar-chart"
       }
     ]
-  },
-  {
-    name: "OTHERDEMO",
-    menuPath: "other-demo",
-    icon: "bar-chart",
-    sub: [
-      {
-        name: "OTHERPOST",
-        path: "/other-demo/other-post",
-        icon: "bar-chart"
-      }
-    ]
   }
 ];

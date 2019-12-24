@@ -1,5 +1,4 @@
 import Layout from "../layout/index.vue";
-
 import Login from "@/views/Login";
 
 import JsonDemoPost from "@/views/JsonDemo/Post";

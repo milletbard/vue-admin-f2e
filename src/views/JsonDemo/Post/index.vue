@@ -3,8 +3,15 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  name: "post"
+  name: "post",
+  computed: {
+    ...mapState(["jsonDemo/post"],"postdatas")
+  },
+  created(){
+   console.log(postdatas)
+  }
 };
 </script>
 

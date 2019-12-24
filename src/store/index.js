@@ -2,6 +2,8 @@ import Vue from "vue";
 import Vuex from "vuex";
 import auth from "./modules/auth";
 import menu from "./modules/menu";
+import jsonDemo from "@/store/modules/jsonDemo";
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
@@ -9,21 +11,26 @@ const store = new Vuex.Store({
   strict: process.env.NODE_ENV !== "production",
   modules: {
     auth,
-    menu
+    menu,
+    jsonDemo
   }
 });
 
 if (module.hot) {
   // 使 action 和 mutation 成為可熱重載模塊
-  module.hot.accept(["./modules/auth", "./modules/menu.js"], () => {
-    // 加载新模块
-    store.hotUpdate({
-      modules: {
-        auth: require("./modules/auth").default,
-        menu: require("./modules/menu").default
-      }
-    });
-  });
+  module.hot.accept(
+    ["./modules/auth", "./modules/menu.js", "./modules/jsonDemo"],
+    () => {
+      // 加载新模块
+      store.hotUpdate({
+        modules: {
+          auth: require("./modules/auth").default,
+          menu: require("./modules/menu").default,
+          jsonDemo: require("./modules/jsonDemo").default
+        }
+      });
+    }
+  );
 }
 
 export default store;
