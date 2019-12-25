@@ -14,8 +14,11 @@ const mutations = {
   GET_SUCCESS: state => {
     state.postsRequest = false;
   },
-  GETPOSTS_SUCCESS: (state, data) => {
+  GET_POSTS_SUCCESS: (state, data) => {
     state.postsDatas = data;
+  },
+  DELETE_SUCCESS: state => {
+    state.postsRequest = false;
   },
   FAILURE: (state, e) => {
     state.postsRequest = false;
@@ -29,7 +32,7 @@ const actions = {
     try {
       const { data } = await getPosts();
 
-      commit("GETPOSTS_SUCCESS", data);
+      commit("GET_POSTS_SUCCESS", data);
       commit("GET_SUCCESS");
     } catch (e) {
       //
@@ -39,10 +42,13 @@ const actions = {
   deletePosts: async ({ commit }, id) => {
     commit("REQUEST");
     try {
-      //
+      await deletePosts(id);
+      commit("DELETE_SUCCESS");
+      return true;
     } catch (e) {
-      //
+      commit("FAILURE", e);
     }
+    return false;
   }
 };
 

@@ -1,6 +1,10 @@
 <template>
   <div>
-    <posts-table :postsRequest="postsRequest" :postsDatas="postsDatas"></posts-table>
+    <posts-table
+      :postsRequest="postsRequest"
+      :postsDatas="postsDatas"
+      @delete-posts="deletePostsHandlar"
+    ></posts-table>
   </div>
 </template>
 
@@ -16,12 +20,19 @@ export default {
     ...mapState("JsonDemo/posts", ["postsRequest", "postsDatas"])
   },
   methods: {
-    ...mapActions("JsonDemo/posts", ["getPosts", "deletePosts"])
+    ...mapActions("JsonDemo/posts", ["getPosts", "deletePosts"]),
+    async deletePostsHandlar(id) {
+      const success = await this.deletePosts(id);
+      if (success)
+        this.$message({
+          message: `刪除成功，資料並不會真的被刪除，僅提供模擬`,
+          type: "success"
+        });
+    }
   },
 
   created() {
     this.getPosts();
-    this.deletePosts(1);
   }
 };
 </script>
