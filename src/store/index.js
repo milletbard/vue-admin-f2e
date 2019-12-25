@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 import Vue from "vue";
 import Vuex from "vuex";
 import auth from "./modules/auth";
 import menu from "./modules/menu";
-import jsonDemo from "@/store/modules/jsonDemo";
+import JsonDemo from "./modules/jsonDemo";
 
 Vue.use(Vuex);
 
@@ -12,7 +13,7 @@ const store = new Vuex.Store({
   modules: {
     auth,
     menu,
-    jsonDemo
+    JsonDemo
   }
 });
 
@@ -26,7 +27,7 @@ if (module.hot) {
         modules: {
           auth: require("./modules/auth").default,
           menu: require("./modules/menu").default,
-          jsonDemo: require("./modules/jsonDemo").default
+          JsonDemo: require("./modules/jsonDemo").default
         }
       });
     }
