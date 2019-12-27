@@ -1,16 +1,11 @@
 <template>
   <el-menu class="side-menu" :router="true" :default-active="activeIndex">
-    <el-menu-item
-      v-for="item in activeMenu"
-      :key="item.name"
-      :index="item.path"
-      >{{ item.name }}</el-menu-item
-    >
+    <el-menu-item v-for="item in menu" :key="item.name" :index="item.path">{{ item.name }}</el-menu-item>
   </el-menu>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 import { compose, split, nth, take, join } from "lodash/fp";
 
 export default {
@@ -19,18 +14,17 @@ export default {
     activeIndex: ""
   }),
   computed: {
-    ...mapGetters("menu", ["sub"]),
-    activeMenu() {
-      const { path } = this.$route;
-      const getName = compose(this.sub, nth(1), split("/"));
-
-      return getName(path);
-    }
+    ...mapState("menu", ["menu"])
   },
   methods: {
     updateActiveIndex() {
       const { path } = this.$route;
-      const getActiveIndex = compose(join("/"), take(3), split("/"));
+      const getActiveIndex = compose(
+        join("/"),
+        take(3),
+        split("/")
+      );
+
       this.activeIndex = getActiveIndex(path);
     }
   },

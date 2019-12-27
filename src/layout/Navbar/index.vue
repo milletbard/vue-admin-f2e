@@ -1,14 +1,6 @@
 <template>
-  <nav
-    class="navbar is-info"
-    role="navigation"
-    aria-label="dropdown navigation"
-  >
+  <nav class="navbar is-info" role="navigation" aria-label="dropdown navigation">
     <div class="columns">
-      <div class="column is-narrow">
-        <nav-menu></nav-menu>
-      </div>
-
       <div class="column is-narrow">
         <nav-brand></nav-brand>
       </div>
@@ -23,14 +15,12 @@
 </template>
 
 <script>
-import NavMenu from "./NavMenu";
 import NavBrand from "./NavBrand";
 import NavLogout from "./NavLogout";
 
 export default {
   name: "navbar",
   components: {
-    NavMenu,
     NavBrand,
     NavLogout
   }

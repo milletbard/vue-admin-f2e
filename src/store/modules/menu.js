@@ -4,21 +4,9 @@ import { map, head, find } from "lodash";
 const state = { menu };
 
 const getters = {
-  defaultRoute: () => "/json-demo/post",
-  main: ({ menu }) => {
-    const gotModuleDefaultPath = sub => head(sub).path;
-
-    const mapModuleDefaultPath = ({ sub, ...module }) => ({
-      ...module,
-      path: gotModuleDefaultPath(sub)
-    });
-
-    return map(menu, mapModuleDefaultPath);
-  },
-  sub: ({ menu }) => menuPath => {
-    const main = find(menu, { menuPath }) ? find(menu, { menuPath }) : [];
-
-    return main.sub;
+  defaultRoute: () => "/json-demo",
+  main: ({ menu }) => () => {
+    return menu;
   }
 };
 

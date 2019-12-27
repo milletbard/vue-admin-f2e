@@ -1,8 +1,7 @@
 import Layout from "../layout/index.vue";
 import Login from "@/views/Login";
 
-import JsonDemoPost from "@/views/json-demo/posts";
-import JsonDemoComments from "@/views/json-demo/comments";
+import JsonDemo from "@/views/json-demo";
 
 import ErrorNotFound from "@/views/Error/NotFound";
 
@@ -17,12 +16,8 @@ export default [
     meta: { requiresAuth: true },
     children: [
       {
-        path: "/json-demo/post",
-        component: JsonDemoPost
-      },
-      {
-        path: "/json-demo/comments",
-        component: JsonDemoComments
+        path: "/json-demo",
+        component: JsonDemo
       }
     ]
   },
