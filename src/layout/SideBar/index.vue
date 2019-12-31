@@ -24,6 +24,7 @@ export default {
         take(3),
         split("/")
       );
+      
 
       this.activeIndex = getActiveIndex(path);
     }
